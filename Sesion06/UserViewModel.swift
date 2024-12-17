@@ -25,4 +25,17 @@ class UserViewModel: ObservableObject {
             isLoading = false
         }
     }
+    
+    func requestUser2() {
+        Task {
+            do {
+                isLoading = true
+                errorMessage = nil
+                users = try await UserService2.shared.fetchUsers()
+            } catch {
+                errorMessage = "Ocurrió un error: \(error.localizedDescription)"
+            }
+            isLoading = false
+        }
+    }
 }

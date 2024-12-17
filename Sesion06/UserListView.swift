@@ -37,7 +37,8 @@ struct UserListView: View {
             }
             .navigationTitle("Usuarios")
             .onAppear {
-                viewModel.requestUser()
+                //viewModel.requestUser()
+                viewModel.requestUser2()
             }
         }
     }
