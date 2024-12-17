@@ -12,21 +12,25 @@ struct UserDetailView: View {
     
     var body: some View {
         VStack {
-            Text("User Info")
+            
             List {
-                Text("ID: \(user.id)")
-                Text("Name: \(user.name)")
-                Text("Email: \(user.email)")
-                Text("Phone: \(user.phone)")
-                Text("Website: \(user.website)")
-            }
-            .padding()
-            Text("User Adress")
-            List {
-                Text("Street: \(user.address.street)")
-                Text("Suite: \(user.address.suite)")
-                Text("City: \(user.address.city)")
-                Text("Zipcode: \(user.address.zipcode)")
+                Group {
+                    Text("User Info")
+                        .font(.headline)
+                    Text("ID: \(user.id)")
+                    Text("Name: \(user.name)")
+                    Text("Email: \(user.email)")
+                    Text("Phone: \(user.phone)")
+                    Text("Website: \(user.website)")
+                }
+                Group {
+                    Text("User Adress")
+                        .font(.headline)
+                    Text("Street: \(user.address.street)")
+                    Text("Suite: \(user.address.suite)")
+                    Text("City: \(user.address.city)")
+                    Text("Zip Code: \(user.address.zipcode)")
+                }
             }
         }
         .navigationTitle(user.name)
